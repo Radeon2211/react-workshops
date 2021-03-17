@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import GoogleMapReact from 'google-map-react';
+import WikipediaAPI from '../services/wikipedia';
 
 const gdanskPosition = {
   lat: 54.3478088,
@@ -9,6 +10,14 @@ const gdanskPosition = {
 const defaultZoom = 11;
 
 function GoogleMap() {
+  useEffect(() => {
+    async function fetchArticles() {
+      const articles = await WikipediaAPI.getArticles({ coord: gdanskPosition });
+      console.log('Articles for Gdańsk:', articles)
+    };
+    fetchArticles();
+  }, []);
+
   return (
     <div style={{ height: '100vh', width: '100%' }}>
       <GoogleMapReact
