@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Layout as AntLayout } from 'antd';
 import GoogleMap from './GoogleMap';
+
 const { Header, Content, Footer: AntComponent } = AntLayout;
 
 const Logo = styled.h2`
@@ -29,11 +30,11 @@ function Page() {
         <Logo>Wikipedia Map</Logo>
       </Header>
       <Inner>
-        <GoogleMap/>
+        <GoogleMap />
       </Inner>
       <Footer>Ant Design ©2018 Created by Ant UED</Footer>
     </Layout>
   );
 }
 
-export default Page
+export default Page;

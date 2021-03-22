@@ -9,6 +9,6 @@ function MapPage() {
       <Page />
     </>
   );
-};
+}
 
 export default MapPage;
