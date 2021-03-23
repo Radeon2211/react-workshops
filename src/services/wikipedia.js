@@ -20,20 +20,19 @@ const api = {
       ...defaultParams,
     };
 
-    if (!coord) {
-      console.error('Wikipedia API: no coord passed to getArticles');
+    if (coord) {
+      return client
+        .get('api.php?', {
+          searchParams: {
+            ...params,
+            gscoord: `${coord.lat}|${coord.lng}`,
+            gsradius: radius,
+            gslimit: limit,
+          },
+        })
+        .json();
     }
-
-    return client
-      .get('api.php?', {
-        searchParams: {
-          ...params,
-          gscoord: `${coord.lat}|${coord.lng}`,
-          gsradius: radius,
-          gslimit: limit,
-        },
-      })
-      .json();
+    return null;
   },
 };
 
