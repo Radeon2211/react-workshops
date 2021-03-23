@@ -29,7 +29,7 @@ function useMapMediator() {
   }
 
   async function mapLoaded(center) {
-    const articles = await WikipediaAPI.getArticles({ coord: center });
+    await WikipediaAPI.getArticles({ coord: center });
   }
 
   attachListener('mapLoaded', mapLoaded);
