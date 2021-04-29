@@ -1,3 +1,5 @@
+.env-cmdrc
+
 # Logs
 logs
 *.log

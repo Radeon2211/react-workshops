@@ -2,12 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Layout as AntLayout } from 'antd';
 import GoogleMap from './GoogleMap';
+import Header from './Header';
+import ArticleModal from './ArticleModal';
 
-const { Header, Content, Footer: AntComponent } = AntLayout;
-
-const Logo = styled.h2`
-  color: #fff;
-`;
+const { Content, Footer: AntComponent } = AntLayout;
 
 const Inner = styled(Content)`
   min-height: 280px;
@@ -15,7 +13,7 @@ const Inner = styled(Content)`
   background: #fff;
 `;
 
-const Layout = styled(AntComponent)`
+const Layout = styled(AntLayout)`
   min-height: 100vh;
 `;
 
@@ -23,18 +21,15 @@ const Footer = styled(AntComponent)`
   text-align: center;
 `;
 
-function Page() {
+export default function Page() {
   return (
-    <Layout className="layout">
-      <Header>
-        <Logo>Wikipedia Map</Logo>
-      </Header>
+    <Layout>
+      <Header />
       <Inner>
+        <ArticleModal />
         <GoogleMap />
       </Inner>
-      <Footer>Ant Design ©2018 Created by Ant UED</Footer>
+      <Footer>Radosław Mikrut &copy;2021 Netguru College: Frontend React</Footer>
     </Layout>
   );
 }
-
-export default Page;

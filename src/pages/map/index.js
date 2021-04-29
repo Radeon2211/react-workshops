@@ -1,8 +1,8 @@
 import React from 'react';
-import Page from '../../components/Page';
 import MapMediator from './mediator';
+import Page from '../../components/Page';
 
-function MapPage() {
+export default function MapPage() {
   return (
     <>
       <MapMediator />
@@ -10,5 +10,3 @@ function MapPage() {
     </>
   );
 }
-
-export default MapPage;
